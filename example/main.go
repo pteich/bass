@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/sdxstar/bass"
 	"time"
+
+	"github.com/pteich/bass"
 )
 
 var devices = make(map[uint32]*bass.DeviceInfo)

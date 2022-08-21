@@ -2,13 +2,14 @@ package bass
 
 import "C"
 import (
-	"github.com/axgle/mahonia"
 	"math"
 	"os"
 	"path/filepath"
 	"runtime"
-	"syscall"
 	"unsafe"
+
+	"github.com/axgle/mahonia"
+	"github.com/ying32/dylib"
 )
 
 var dc = mahonia.NewDecoder("GBK")
@@ -48,7 +49,7 @@ type BassInfo struct {
 
 var (
 	workDir, _ = filepath.Abs(filepath.Dir(os.Args[0]))
-	libbass    = syscall.NewLazyDLL(filepath.Join(workDir, dylibName()))
+	libbass    = dylib.NewLazyDLL(filepath.Join(workDir, dylibName()))
 
 	_BASS_GetVersion       = libbass.NewProc("BASS_GetVersion")
 	_BASS_Init             = libbass.NewProc("BASS_Init")

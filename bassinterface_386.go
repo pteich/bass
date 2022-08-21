@@ -1,7 +1,7 @@
 package bass
 
 import (
-	"github.com/sdxstar/bass/floatpatch"
+	"github.com/pteich/bass/floatpatch"
 )
 
 func ToUInt64(r1, r2 uintptr) uint64 {
